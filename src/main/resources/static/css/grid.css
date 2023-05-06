@@ -1,0 +1,13 @@
+.lyout_info{ display: grid; grid-template-rows: 52px auto; }
+.lyout_info > .top_info{justify-items: center; height: 30px; display: flex;} /* 위에 버튼들 */
+.page_info > li {list-style: none; float: left; padding: 6px;}
+.tableView-design{padding-top: 40px; display: grid; grid-template-columns: auto auto auto; grid-gap: 30px; margin: 10px;} /* 테이블 표 */
+.search{padding-top: 40px;} /* 검색 */
+
+@media print { /* 프린트시 안보이게 */
+    #top_info { display:none; }
+    .boxAll_click{display:none;}
+    .page_info{display:none;}
+    .search{display:none;}
+    .p{display: none;}
+}
