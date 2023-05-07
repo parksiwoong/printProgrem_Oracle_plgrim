@@ -4,6 +4,18 @@
         <Property name="BASE_DIR">/Users/madplay/Desktop/bootdemo</Property>
     </Properties>
 
+    <logger name="jdbc" level="OFF"/>
+
+    <logger name="jdbc.sqlonly" level="OFF"/>
+    <logger name="jdbc.sqltiming" level="DEBUG"/>
+    <logger name="jdbc.audit" level="OFF"/>
+    <logger name="jdbc.resultset" level="OFF"/>
+    <logger name="jdbc.resultsettable" level="DEBUG"/>
+    <logger name="jdbc.connection" level="OFF"/>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+    </root>
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT" follow="true">
             <PatternLayout pattern="${LOG_FORMAT}"/>
