@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mybatisoraclesetting.mapperDao.PlgrimBoardDao">
+    <select id="selectTakeOutList" resultType="PlgrimVo">
+        SELECT /* [반출회원조회] com.example.mybatisoraclesetting.mapperDao.PlgrimBoardDao #selectTakeOutList */
+               T1.*
+             , DECODE( T2.PLGRIM_SN,NULL , '(VPN신청필요)', '') AS VPN_DT_YN
+          FROM PLGRIM_OFFICE T1 LEFT JOIN PLGRIM_OFFICE_VPN_CODE T2
+            ON T1.PLGRIM_SN = T2.PLGRIM_SN
+           AND T1.PLGRIM_NM LIKE '%'|| #{plgrimNm} ||'%'
+           AND SYSDATE BETWEEN t2.VPN_START_DT AND t2.VPN_END_DT
+    </select>
+</mapper>
